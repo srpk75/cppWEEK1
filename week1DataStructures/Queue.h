@@ -6,6 +6,8 @@
 typedef struct Queue
 {
 	int* memory = NULL; //has all the ints
+	int size;
+	int lastInQueue;
 } Queue;
 
 void initQueue(Queue* q, unsigned int size);
