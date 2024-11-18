@@ -26,12 +26,28 @@ void cleanQueue(Queue* q)
 
 void enqueue(Queue* q, unsigned int newValue)
 {
-	q->memory[q->lastInQueue] = newValue;
-	q->lastInQueue++;
+	if (!isFull(q))
+	{
+		q->memory[q->lastInQueue] = newValue;
+		q->lastInQueue++;
+	}
 }
 
 int dequeue(Queue* q)
 {
-	q->lastInQueue--;
-	return q->memory[q->lastInQueue + 1];
+	if (!isEmpty(q))
+	{
+		q->lastInQueue--;
+		return q->memory[q->lastInQueue + 1];
+	}
+}
+
+bool isEmpty(Queue* q)
+{
+	return q->lastInQueue == 0;
+}
+
+bool isFull(Queue* q)
+{
+	return q->lastInQueue == q->size;
 }
