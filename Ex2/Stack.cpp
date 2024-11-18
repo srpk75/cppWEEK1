@@ -18,3 +18,16 @@ void cleanStack(Stack* s)
 		delete(pDel);
 	}
 }
+
+void push(Stack* s, unsigned int element)
+{
+	Node* n = new Node;
+	feed(n, element);
+	s->head = extend(s->head, n);
+}
+
+int pop(Stack* s)
+{
+	int val = s->head->val;
+	s->head = chop(s->head);
+}
