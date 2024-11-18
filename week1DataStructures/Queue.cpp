@@ -29,3 +29,9 @@ void enqueue(Queue* q, unsigned int newValue)
 	q->memory[q->lastInQueue] = newValue;
 	q->lastInQueue++;
 }
+
+int dequeue(Queue* q)
+{
+	q->lastInQueue--;
+	return q->memory[q->lastInQueue + 1];
+}
