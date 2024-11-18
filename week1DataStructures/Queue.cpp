@@ -4,7 +4,7 @@
 void initQueue(Queue* q, unsigned int size)
 {
 	int i;
-	q->memory = (int*)malloc(sizeof(int) * size);
+	q->memory = new int(size);
 	for (i = 0; i < size; i++)
 	{
 		q->memory[i] = -1;
