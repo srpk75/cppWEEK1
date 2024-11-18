@@ -24,10 +24,24 @@ void push(Stack* s, unsigned int element)
 	Node* n = new Node;
 	feed(n, element);
 	s->head = extend(s->head, n);
+	s->size++;
 }
 
 int pop(Stack* s)
 {
 	int val = s->head->val;
-	s->head = chop(s->head);
+	if (!isEmpty(s))
+	{
+		s->head = chop(s->head);
+		s->size--;
+	}
+	else
+		val = -1;
+
+	return val;
+}
+
+bool isEmpty(Stack* s)
+{
+	return s->size == 0;
 }
