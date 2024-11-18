@@ -33,7 +33,7 @@ int dequeue(Queue* q)
 	int val = -1;
 	if (!isEmpty(q))
 	{
-		val = q->memory[q->lastInQueue];
+		val = q->memory[q->lastInQueue - 1];
 		q->lastInQueue--;
 	}
 	return val;
