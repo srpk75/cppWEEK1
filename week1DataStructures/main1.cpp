@@ -13,6 +13,7 @@ int main()
 	std::cout << isFull(&q) << std::endl;
 	std::cout << dequeue(&q) << std::endl;
 	std::cout << isFull(&q) << std::endl;
+	cleanQueue(&q);
 
 	return 0;
 }
