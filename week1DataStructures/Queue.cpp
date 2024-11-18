@@ -1,11 +1,6 @@
 #include <iostream>
 #include "Queue.h"
 
-int Main(void)
-{
-	Queue* queue = new Queue;
-}
-
 void initQueue(Queue* q, unsigned int size)
 {
 	int i;
@@ -35,11 +30,13 @@ void enqueue(Queue* q, unsigned int newValue)
 
 int dequeue(Queue* q)
 {
+	int val = -1;
 	if (!isEmpty(q))
 	{
+		val = q->memory[q->lastInQueue];
 		q->lastInQueue--;
-		return q->memory[q->lastInQueue + 1];
 	}
+	return val;
 }
 
 bool isEmpty(Queue* q)
