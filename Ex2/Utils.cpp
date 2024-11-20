@@ -31,6 +31,10 @@ int* reverse10()
 		std::cout << "Enter Number: ";
 		std::cin >> nums[i];
 	}
+
+	reverse(nums, size);
+
+	return nums;
 	return 0;
 }
 
