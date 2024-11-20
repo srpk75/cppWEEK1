@@ -22,5 +22,21 @@ void reverse(int* nums, unsigned int size)
 
 int* reverse10()
 {
-	int* arr = new int[10];
+	const int size = 10;
+	int i;
+	int* nums = new int[size];
+
+	for (i = 0; i < size; i++)
+	{
+		std::cout << "Enter Number: ";
+		std::cin >> nums[i];
+	}
+	return 0;
+}
+
+int main()
+{
+	reverse10();
+
+	return 0;
 }
